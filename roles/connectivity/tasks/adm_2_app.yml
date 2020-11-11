@@ -1,5 +1,5 @@
 ---
-- name: ADM2 TO APP [1]discovery-service to APP [jhtop]
+- name: ADM2 TO APP [1]discovery-service to jhtop
   wait_for:
     host: "{{ groups['jfile'][0] }}"
     port: "{{ port }}"
@@ -8,6 +8,21 @@
   check_mode: no
   with_items:
     - "7443"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: ADM2 TO APP [2]discovery-service to topic-collector
+  wait_for:
+    host: "{{ groups['topic_collector'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "3877"
   loop_control:
     loop_var: port  
   register: wait_result 

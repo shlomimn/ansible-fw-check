@@ -13,3 +13,64 @@
   register: wait_result 
   ignore_errors: yes
 
+
+- name: WEB TO APP [2]jback to jscheduler
+  wait_for:
+    host: "{{ groups['users_management'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "7777"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: WEB TO APP [3]jback to query-manager
+  wait_for:
+    host: "{{ groups['users_management'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "4003"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: WEB TO APP [4]jback to query-director
+  wait_for:
+    host: "{{ groups['users_management'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "4037"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: WEB TO APP [5]jback to report-service
+  wait_for:
+    host: "{{ groups['report_service'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "4005"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
