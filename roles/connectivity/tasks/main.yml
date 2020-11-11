@@ -1,0 +1,11 @@
+
+- name: start msg
+  debug:
+    msg: echo "connectivity-check"
+
+
+- name: ALL-2-ADMIN
+  include_tasks: "{{ item }}"
+  loop:
+    - all_2_adm1.yml
+    - all_2_adm2.yml

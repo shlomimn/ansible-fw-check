@@ -1,0 +1,15 @@
+---
+- name: ALL TO [1]sensu-rabbit & [2]sensu-redis
+  wait_for:
+    host: "{{ groups['ansible'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "4567"
+    - "6379"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes

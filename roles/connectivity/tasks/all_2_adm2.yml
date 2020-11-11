@@ -1,0 +1,17 @@
+---
+- name: ALL TO [1]configuration_service & [2]discovery-service
+  wait_for:
+    host: "{{ groups['configuration_service'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "3875"
+    - "3873"
+    - "3895"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
