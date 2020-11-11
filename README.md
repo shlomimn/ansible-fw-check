@@ -2,9 +2,9 @@
 
 $ tree
 . <br/>
->├── fw.yml 
->├── hosts.yml 
->└── roles 
+>├── fw.yml <br/>
+>├── hosts.yml <br/>
+>└── roles <br/>
 >>    └── connectivity
 >>>        └── tasks
 >>>>            ├── all_2_adm1.yml
