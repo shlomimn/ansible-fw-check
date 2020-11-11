@@ -5,10 +5,10 @@ $ tree
 >├── fw.yml <br/>
 >├── hosts.yml <br/>
 >└── roles <br/>
->>    └── connectivity <br/>
->>>        └── tasks <br/>
->>>>            ├── all_2_adm1.yml <br/>
->>>>            ├── all_2_adm2.yml <br/>
+>>    └── connectivity
+>>>        └── tasks
+>>>>            ├── all_2_adm1.yml
+>>>>            ├── all_2_adm2.yml
 >>>>            └── main.yml <br/>
             
 
