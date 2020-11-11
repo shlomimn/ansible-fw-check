@@ -3,8 +3,10 @@
 ### tree
 
 ![](images/tree.png)
+
+<br/>
             
 ### ansible-playbook
 
-execution command:
+execution command:  
 *ansible-playbook -C fw.yml -i hosts.yml*
