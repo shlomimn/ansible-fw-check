@@ -1,7 +1,7 @@
 # fw-check
 
 $ tree
-. <br/>
+>. <br/>
 >├── fw.yml <br/>
 >├── hosts.yml <br/>
 >└── roles <br/>
