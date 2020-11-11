@@ -2,6 +2,6 @@
 
 ## tree
 
-![](images/treepng)
+![]{images/tree.png}
             
 
