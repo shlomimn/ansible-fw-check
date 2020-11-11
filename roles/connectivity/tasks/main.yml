@@ -9,3 +9,5 @@
   loop:
     - all_2_adm1.yml
     - all_2_adm2.yml
+    - adm_2_app.yml
+    - web_2_app.yml

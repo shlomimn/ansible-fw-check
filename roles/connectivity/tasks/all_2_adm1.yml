@@ -1,5 +1,5 @@
 ---
-- name: ALL TO [1]sensu-rabbit & [2]sensu-redis
+- name: ALL TO [1]sensu-rabbit
   wait_for:
     host: "{{ groups['ansible'][0] }}"
     port: "{{ port }}"
@@ -8,7 +8,36 @@
   check_mode: no
   with_items:
     - "4567"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: ALL TO [2]sensu-redis
+  wait_for:
+    host: "{{ groups['ansible'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
     - "6379"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+
+- name: ALL TO [3]graphite
+  wait_for:
+    host: "{{ groups['ansible'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "3999"
   loop_control:
     loop_var: port  
   register: wait_result 
