@@ -1,0 +1,16 @@
+---
+- name: APP TO COL [1] to msearch-solr
+  wait_for:
+    host: "{{ groups['msearch_solr'][0] }}"
+    port: "{{ port }}"
+    timeout: 1
+    state: started
+  check_mode: no
+  with_items:
+    - "3867"
+  loop_control:
+    loop_var: port  
+  register: wait_result 
+  ignore_errors: yes
+
+

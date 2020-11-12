@@ -10,4 +10,6 @@
     - all_2_adm1.yml
     - all_2_adm2.yml
     - adm_2_app.yml
+    - adm_2_col.yml
     - web_2_app.yml
+    - col_2_app.yml
